@@ -13,3 +13,54 @@ final class InputViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+
+
+
+// 解答例1
+
+// private(set)は「外から取得はできるが、変更はできない」構造
+// exitWithSegueのidentifierにexitを設定
+//private(set) var selectedPrefecture: Prefecture?
+//
+//@IBAction private func didTapTokyo(_ sender: Any) {
+//    performExitSegue(prefecture: .tokyo)
+//}
+//
+//private func performExitSegue(prefecture: Prefecture) {
+//    selectedPrefecture = prefecture
+//    performSegue(withIdentifier: "exit", sender: nil)
+//}
+//
+//final class ViewController: UIViewController {
+//
+//    @IBOutlet private weak var selectedPrefectures: UILabel!
+//
+//    @IBAction func exit(segue: UIStoryboardSegue) {
+//        guard let inputVC = segue.source as? InputViewController else { return }
+//        selectedPrefectures.text = inputVC.selectedPrefecture?.displayName ?? "未選択"
+//    }
+//}
+
+//解答例2
+
+//@IBOutlet weak var button1: UIButton!
+//@IBOutlet weak var button2: UIButton!
+//@IBOutlet weak var button3: UIButton!
+//@IBOutlet weak var button4: UIButton!
+
+//var selectedButtonNumber = 0
+//var prefName:[String] = ["東京都","神奈川県","埼玉県","千葉県"]
+//private var buttons: [UIButton] {
+//    [button1, button2, button3, button4]
+//}
+
+//override func viewDidLoad() {
+//    super.viewDidLoad()
+//    prefectureName()
+//}
+
+//func prefectureName() {
+//    zip(buttons, prefName).forEach { button, prefName in
+//        button.setTitle(prefName, for: .normal)
+//    }
+//}
