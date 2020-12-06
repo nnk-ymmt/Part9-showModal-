@@ -9,12 +9,36 @@ import UIKit
 
 final class InputViewController: UIViewController {
 
+    var selectedPrefecture: Prefecture?
+
+    @IBAction private func selectTokyo(_ sender: Any) {
+        performExitSegue(prefecture: .tokyo)
+    }
+
+    @IBAction private func selectSaitama(_ sender: Any) {
+        performExitSegue(prefecture: .saitama)
+    }
+
+    @IBAction private func selectChiba(_ sender: Any) {
+        performExitSegue(prefecture: .chiba)
+    }
+
+    private func performExitSegue(prefecture: Prefecture) {
+        selectedPrefecture = prefecture
+        performSegue(withIdentifier: "exit", sender: nil)
+    }
+
     @IBAction private func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
 }
 
 
+
+// 改善点
+
+// 初回のコードはコメントアウト、unwind segueを1つにしたコードで書き直している
+// 初回の作りだとunwind segueを47都道府県だったらその数分作らなければならなくなる
 
 // 解答例1
 

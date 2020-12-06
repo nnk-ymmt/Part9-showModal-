@@ -28,24 +28,29 @@ final class ViewController: UIViewController {
 
     @IBOutlet private weak var prefectureLabel: UILabel!
 
-    var prefecture: Prefecture?
-
-    @IBAction private func selectTokyo(segue: UIStoryboardSegue) {
-        prefecture = .tokyo
-        displayPrefecture()
+    @IBAction func exit(segue: UIStoryboardSegue) {
+        guard let inputVC = segue.source as? InputViewController else { return }
+        prefectureLabel.text = inputVC.selectedPrefecture?.displayName ?? "未選択"
     }
 
-    @IBAction private func selectSaitama(segue: UIStoryboardSegue) {
-        prefecture = .saitama
-        displayPrefecture()
-    }
-
-    @IBAction private func selectChiba(segue: UIStoryboardSegue) {
-        prefecture = .chiba
-        displayPrefecture()
-    }
-
-    func displayPrefecture() {
-        prefectureLabel.text = prefecture?.displayName
-    }
+//    var prefecture: Prefecture?
+//
+//    @IBAction private func selectTokyo(segue: UIStoryboardSegue) {
+//        prefecture = .tokyo
+//        displayPrefecture()
+//    }
+//
+//    @IBAction private func selectSaitama(segue: UIStoryboardSegue) {
+//        prefecture = .saitama
+//        displayPrefecture()
+//    }
+//
+//    @IBAction private func selectChiba(segue: UIStoryboardSegue) {
+//        prefecture = .chiba
+//        displayPrefecture()
+//    }
+//
+//    func displayPrefecture() {
+//        prefectureLabel.text = prefecture?.displayName
+//    }
 }

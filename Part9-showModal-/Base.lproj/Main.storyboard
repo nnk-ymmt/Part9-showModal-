@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -74,21 +73,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                         <state key="normal" title="東京都"/>
                                         <connections>
-                                            <segue destination="u88-kN-k4c" kind="unwind" unwindAction="selectTokyoWithSegue:" id="9IC-Nb-nlY"/>
+                                            <action selector="selectTokyo:" destination="5Rh-ks-cbn" eventType="touchUpInside" id="zBd-gY-WJR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EK-yf-lXS">
                                         <rect key="frame" x="0.0" y="47" width="46" height="30"/>
                                         <state key="normal" title="埼玉県"/>
                                         <connections>
-                                            <segue destination="u88-kN-k4c" kind="unwind" unwindAction="selectSaitamaWithSegue:" id="QLs-lF-pjE"/>
+                                            <action selector="selectSaitama:" destination="5Rh-ks-cbn" eventType="touchUpInside" id="QMO-Uk-VAy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-mq-lj8">
                                         <rect key="frame" x="0.0" y="94" width="46" height="30"/>
                                         <state key="normal" title="千葉県"/>
                                         <connections>
-                                            <segue destination="u88-kN-k4c" kind="unwind" unwindAction="selectChibaWithSegue:" id="7WE-6C-foi"/>
+                                            <action selector="selectChiba:" destination="5Rh-ks-cbn" eventType="touchUpInside" id="zIw-lW-VCD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -109,6 +108,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="u88-kN-k4c" kind="unwind" identifier="exit" unwindAction="exitWithSegue:" id="zup-pY-wgc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhO-RD-kYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="u88-kN-k4c" userLabel="Exit" sceneMemberID="exit"/>
