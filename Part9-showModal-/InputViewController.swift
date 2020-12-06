@@ -9,7 +9,7 @@ import UIKit
 
 final class InputViewController: UIViewController {
 
-    var selectedPrefecture: Prefecture?
+    private(set) var selectedPrefecture: Prefecture?
 
     @IBAction private func selectTokyo(_ sender: Any) {
         performExitSegue(prefecture: .tokyo)
